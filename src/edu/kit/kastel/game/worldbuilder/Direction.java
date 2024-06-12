@@ -28,7 +28,7 @@ public enum Direction {
 
     private static final char UP_CHAR = 'N';
     private static final char DOWN_CHAR = 'S';
-    private static final char RIGHT_CHAR = 'E';
+    private static final char RIGHT_CHAR = 'O';
     private static final char LEFT_CHAR = 'W';
 
     /**
