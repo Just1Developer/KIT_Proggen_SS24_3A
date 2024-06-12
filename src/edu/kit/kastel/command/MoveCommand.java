@@ -32,7 +32,7 @@ final class MoveCommand implements Command {
             Coordinate loc = Main.getWorld().getAnt().getLocation();
             Main.getWorld().getAnt().move();
             if (Main.getWorld().isAntOutOfBounds()) {
-                System.out.println(Main.getWorld().asCharacter(loc));
+                System.out.println(loc.toString());
                 Main.getCommandHandler().quit();
                 break;
             }
