@@ -1,0 +1,11 @@
+print
+position
+field 2,1
+field 0,0
+move 0
+print
+move 10
+print
+position
+field 0,0
+quit
