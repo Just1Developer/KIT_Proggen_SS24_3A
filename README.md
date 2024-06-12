@@ -1,3 +1,3 @@
-# Programmieraufgabe - Notiz für Tutoren
-Diese Aufgabe braucht ihr nicht zu bewerten. Zum Helfen habe ich die Aufgabe bearbeitet und habe sie mit Artemis getestet.
-Programmieren habe ich bereits mit 2,3 bestanden, hier müsst ihr ehrlich nichts bewerten.
+# Programmieren Aufgabe 3A - SS24
+
+### Die Aufgaben darf ich im Rahmen der KIT Nutzungsrichtlinien nicht veröffentlichen. Das schließt genaues Dokumentieren der gesamten Aufgabenstellung mit ein. Ein vollständiges Verständnis dieses Repositories ist unter Umständen nur mit dem Arbeitsblatt möglich.
