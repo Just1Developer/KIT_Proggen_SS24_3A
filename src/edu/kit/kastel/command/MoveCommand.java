@@ -29,10 +29,10 @@ final class MoveCommand implements Command {
         }
 
         for (int i = 0; i < moves; ++i) {
-            Coordinate loc = Main.getWorld().getAnt().getLocation();
+            String lastLocationString = Main.getWorld().getAnt().getLocation().toString();
             Main.getWorld().getAnt().move();
             if (Main.getWorld().isAntOutOfBounds()) {
-                System.out.println(loc.toString());
+                System.out.println(lastLocationString);
                 Main.getCommandHandler().quit();
                 break;
             }
