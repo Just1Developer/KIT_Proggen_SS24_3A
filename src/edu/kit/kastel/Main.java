@@ -12,10 +12,10 @@ import java.util.List;
  */
 public final class Main {
 
-    private Main() { }
-
     private static CommandHandler commandHandler;
     private static World world;
+
+    private Main() { }
 
     /**
      * The main entry point.

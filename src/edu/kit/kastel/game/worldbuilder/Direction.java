@@ -9,9 +9,21 @@ import java.util.Optional;
  */
 public enum Direction {
 
+    /**
+     * The UP direction. Representative of NORTH.
+     */
     UP,
+    /**
+     * The DOWN direction. Representative of SOUTH.
+     */
     DOWN,
+    /**
+     * The LEFT direction. Representative of WEST.
+     */
     LEFT,
+    /**
+     * The RIGHT direction. Representative of EAST.
+     */
     RIGHT;
 
     private static final char UP_CHAR = 'N';
@@ -40,11 +52,11 @@ public enum Direction {
      *   + 'S' -> DOWN<br/>
      *   + 'E' -> RIGHT<br/>
      *   + 'W' -> LEFT
-     * @param _char The character.
+     * @param character The character.
      * @return Optional of the direction or empty.
      */
-    public static Optional<Direction> parseAny(final char _char) {
-        return switch (_char) {
+    public static Optional<Direction> parseAny(final char character) {
+        return switch (character) {
             case UP_CHAR -> Optional.of(UP);
             case DOWN_CHAR -> Optional.of(DOWN);
             case LEFT_CHAR -> Optional.of(LEFT);

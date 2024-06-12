@@ -31,7 +31,10 @@ public final class CommandHandler {
     
     private static Map<String, Command> commands;
     private static boolean running = false;
-    
+
+    /**
+     * Creates a new CommandHandler.
+     */
     public CommandHandler() {
         // This is a precaution, this should not be needed.
         if (commands == null) {

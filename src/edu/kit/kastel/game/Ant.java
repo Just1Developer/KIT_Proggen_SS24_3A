@@ -17,6 +17,9 @@ public class Ant {
 
     /**
      * Creates a new Ant player object. Defaults at direction up.
+     * @param world The world the ant is in.
+     * @param location The location of the ant. Will be copied.
+     * @param direction The direction the ant is looking initially.
      */
     Ant(final World world, Coordinate location, Direction direction) {
         this.direction = Direction.UP;

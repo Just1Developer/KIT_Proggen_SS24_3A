@@ -12,9 +12,25 @@ import java.util.regex.Pattern;
  */
 public class Coordinate {
 
+    /**
+     * The default UP coordinate. Adding this to any coordinate will result in the coordinate
+     * pointing to the field above its original field.
+     */
     public static final Coordinate UP = new Coordinate(0, -1);
+    /**
+     * The default DOWN coordinate. Adding this to any coordinate will result in the coordinate
+     * pointing to the field below its original field.
+     */
     public static final Coordinate DOWN = new Coordinate(0, 1);
+    /**
+     * The default LEFT coordinate. Adding this to any coordinate will result in the coordinate
+     * pointing to the field to the left of its original field.
+     */
     public static final Coordinate LEFT = new Coordinate(-1, 0);
+    /**
+     * The default RIGHT coordinate. Adding this to any coordinate will result in the coordinate
+     * pointing to the field to the right of its original field.
+     */
     public static final Coordinate RIGHT = new Coordinate(1, 0);
 
     private static final String FORMAT_STRING = "%d,%d";
@@ -22,7 +38,8 @@ public class Coordinate {
     private static final int GROUP_INDEX_X = 2;
     private static final int GROUP_INDEX_Y = 1;
 
-    private int x, y;
+    private int x;
+    private int y;
 
     /**
      * Makes a new Coordinate.
@@ -84,6 +101,8 @@ public class Coordinate {
 
     /**
      * Adds the given x and y values to the current coordinate.
+     * @param x the x value to add.
+     * @param y the y value to add.
      */
     public void add(final int x, final int y) {
         this.x += x;
@@ -97,8 +116,12 @@ public class Coordinate {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         Coordinate that = (Coordinate) o;
         return x == that.x && y == that.y;
     }

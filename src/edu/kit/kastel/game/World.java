@@ -33,6 +33,7 @@ public class World {
 
     /**
      * Creates a new world and parses the world contents.
+     * @param worldContents The lines that will construct the world. All should be the same length.
      */
     public World(List<String> worldContents) {
         worldMap = new HashMap<>();
@@ -45,23 +46,22 @@ public class World {
 
         Coordinate currentHead = new Coordinate(0, 0);
         for (String line : worldContents) {
-            char _char;
+            char character;
             for (int i = 0; i < line.length(); ++i) {
-                _char = line.charAt(i);
+                character = line.charAt(i);
 
-                Optional<Direction> directionOptional = Direction.parseAny(_char);
+                Optional<Direction> directionOptional = Direction.parseAny(character);
                 if (directionOptional.isPresent()) {
                     ant = new Ant(this, currentHead, directionOptional.get());
                     worldMap.put(currentHead.copy(), DEFAULT_COLOR);
                 } else {
-                    worldMap.put(currentHead.copy(), TILE_FROM_CHAR_REPR.get(_char));
+                    worldMap.put(currentHead.copy(), TILE_FROM_CHAR_REPR.get(character));
                 }
                 currentHead.add(Coordinate.RIGHT);
             }
             currentHead.setX(0);
             currentHead.add(Coordinate.DOWN);
         }
-
         // As given per the task, we have exactly one ant. No more, no less.
         this.ant = ant;
     }
@@ -140,8 +140,8 @@ public class World {
     public Character asCharacter(Coordinate coordinate) {
         TileColor color = getColor(coordinate);
         if (ant.getLocation().equals(coordinate)) {
-            char _char = Direction.toChar(ant.getDirection());
-            return color == TileColor.BLACK ? _char : Character.toLowerCase(_char);
+            char character = Direction.toChar(ant.getDirection());
+            return color == TileColor.BLACK ? character : Character.toLowerCase(character);
         }
         return CHARACTER_REPR.get(color);
     }
