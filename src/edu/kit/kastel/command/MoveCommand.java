@@ -1,7 +1,6 @@
 package edu.kit.kastel.command;
 
 import edu.kit.kastel.Main;
-import edu.kit.kastel.game.worldbuilder.Coordinate;
 
 /**
  * This command performs a given number of moves on the current playing field.

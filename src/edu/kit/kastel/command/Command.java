@@ -10,7 +10,7 @@ package edu.kit.kastel.command;
  * @author Programmieren-Team
  * @author uwwfh
  */
-public interface Command {
+interface Command {
     
     /**
      * Executes the command.

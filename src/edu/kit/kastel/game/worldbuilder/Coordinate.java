@@ -13,25 +13,25 @@ import java.util.regex.Pattern;
 public class Coordinate {
 
     /**
-     * The default UP coordinate. Adding this to any coordinate will result in the coordinate
-     * pointing to the field above its original field.
-     */
-    public static final Coordinate UP = new Coordinate(0, -1);
-    /**
      * The default DOWN coordinate. Adding this to any coordinate will result in the coordinate
      * pointing to the field below its original field.
      */
     public static final Coordinate DOWN = new Coordinate(0, 1);
     /**
-     * The default LEFT coordinate. Adding this to any coordinate will result in the coordinate
-     * pointing to the field to the left of its original field.
-     */
-    public static final Coordinate LEFT = new Coordinate(-1, 0);
-    /**
      * The default RIGHT coordinate. Adding this to any coordinate will result in the coordinate
      * pointing to the field to the right of its original field.
      */
     public static final Coordinate RIGHT = new Coordinate(1, 0);
+    /**
+     * The default UP coordinate. Adding this to any coordinate will result in the coordinate
+     * pointing to the field above its original field.
+     */
+    static final Coordinate UP = new Coordinate(0, -1);
+    /**
+     * The default LEFT coordinate. Adding this to any coordinate will result in the coordinate
+     * pointing to the field to the left of its original field.
+     */
+    static final Coordinate LEFT = new Coordinate(-1, 0);
 
     private static final String FORMAT_STRING = "%d,%d";
     private static final Pattern REGEX_PATTERN_PARSE = Pattern.compile("^(\\d+),(\\d+)$");
@@ -84,14 +84,6 @@ public class Coordinate {
     }
 
     /**
-     * Sets the y value.
-     * @param y The y value.
-     */
-    public void setY(int y) {
-        this.y = y;
-    }
-
-    /**
      * Adds the given coordinates position to the current coordinate.
      * @param coord The coordinate to add, for example Coordinate.UP.
      */
@@ -104,7 +96,7 @@ public class Coordinate {
      * @param x the x value to add.
      * @param y the y value to add.
      */
-    public void add(final int x, final int y) {
+    private void add(final int x, final int y) {
         this.x += x;
         this.y += y;
     }
@@ -136,7 +128,7 @@ public class Coordinate {
      * @param coordinate the coordinate to create a copy of.
      * @return the copy of the coordinate.
      */
-    public static Coordinate copyOf(Coordinate coordinate) {
+    private static Coordinate copyOf(Coordinate coordinate) {
         return new Coordinate(coordinate.x, coordinate.y);
     }
 

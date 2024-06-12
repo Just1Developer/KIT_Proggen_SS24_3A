@@ -8,8 +8,9 @@ package edu.kit.kastel.command;
  * This enum represents the types that a result of a command can be.
  *
  * @author Programmieren-Team
+ * @author uwwfh
  */
-public enum CommandResultType {
+enum CommandResultType {
     
     /**
      * The command was executed successfully.

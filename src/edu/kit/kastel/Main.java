@@ -22,16 +22,6 @@ public final class Main {
      * @param args Command line arguments.
      */
     public static void main(final String[] args) {
-        /*
-        System.out.println("Hello!");
-        String path = "examples/map1.in";
-        path = args[0];
-        System.out.println(new File(path).getAbsoluteFile().getAbsolutePath());
-        System.out.println(new File(path).exists());
-        File[] files = new File(path).listFiles();
-        if (files == null) { System.out.println("null"); return; }
-        for (File f : files) System.out.println(f);
-        */
         // Given: args = {"<path>"} with |args| = 1
         final String filepath = args[0];
         final List<String> fileContents = FileHelper.readAllLines(filepath);

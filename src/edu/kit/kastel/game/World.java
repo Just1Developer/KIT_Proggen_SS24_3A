@@ -67,22 +67,6 @@ public class World {
     }
 
     /**
-     * Gets the height of the world map.
-     * @return The height of the world.
-     */
-    public int getHeight() {
-        return height;
-    }
-
-    /**
-     * Gets the width of the world map.
-     * @return The width of the world.
-     */
-    public int getWidth() {
-        return width;
-    }
-
-    /**
      * Gets the ant of the world. There only ever is exactly one (1) ant.
      * @return The ant that roams this world.
      */
@@ -98,7 +82,7 @@ public class World {
      * @param coordinate The location.
      * @return The tile color or default color.
      */
-    public TileColor getColor(final Coordinate coordinate) {
+    TileColor getColor(final Coordinate coordinate) {
         return worldMap.getOrDefault(coordinate, DEFAULT_COLOR);
     }
 
@@ -108,19 +92,8 @@ public class World {
      * @param coordinate The location.
      * @param tileColor The tile color.
      */
-    public void setColor(final Coordinate coordinate, final TileColor tileColor) {
+    void setColor(final Coordinate coordinate, final TileColor tileColor) {
         worldMap.put(coordinate, tileColor);
-    }
-
-    /**
-     * If the given coordinate is outside the bounds of the world.
-     * @param coordinate The coordinate.
-     * @return true if out of bounds, false if not.
-     */
-    public boolean isOutOfBounds(Coordinate coordinate) {
-        // <= because of 0-based indexing
-        return coordinate.getX() < 0 || coordinate.getX() >= this.width
-                || coordinate.getY() < 0 || coordinate.getY() >= this.height;
     }
 
     /**
@@ -129,6 +102,17 @@ public class World {
      */
     public boolean isAntOutOfBounds() {
         return isOutOfBounds(ant.getLocation());
+    }
+
+    /**
+     * If the given coordinate is outside the bounds of the world.
+     * @param coordinate The coordinate.
+     * @return true if out of bounds, false if not.
+     */
+    private boolean isOutOfBounds(Coordinate coordinate) {
+        // <= because of 0-based indexing
+        return coordinate.getX() < 0 || coordinate.getX() >= this.width
+                || coordinate.getY() < 0 || coordinate.getY() >= this.height;
     }
 
     /**

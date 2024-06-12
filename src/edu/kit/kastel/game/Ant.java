@@ -39,31 +39,8 @@ public class Ant {
      * Gets the direction of the ant.
      * @return The direction of the ant.
      */
-    public Direction getDirection() {
+    Direction getDirection() {
         return direction;
-    }
-
-    /**
-     * Rotates the Ant clockwise by 90°.
-     */
-    void rotateClockwise() {
-        direction = Direction.clockwiseNext(direction);
-    }
-
-    /**
-     * Rotates the Ant counter-clockwise by 90°.
-     */
-    void rotateCounterClockwise() {
-        direction = Direction.counterClockwiseNext(direction);
-    }
-
-    /**
-     * Moves the Ant by the given coordinate.
-     * @param delta The movement.
-     */
-    void move(final Coordinate delta) {
-        location.add(delta);
-        makePostMoveAction();
     }
 
     /**
@@ -72,6 +49,20 @@ public class Ant {
     public void move() {
         location.add(Direction.asCoordinate(direction));
         makePostMoveAction();
+    }
+
+    /**
+     * Rotates the Ant clockwise by 90°.
+     */
+    private void rotateClockwise() {
+        direction = Direction.clockwiseNext(direction);
+    }
+
+    /**
+     * Rotates the Ant counter-clockwise by 90°.
+     */
+    private void rotateCounterClockwise() {
+        direction = Direction.counterClockwiseNext(direction);
     }
 
     /**

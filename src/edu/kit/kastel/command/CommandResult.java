@@ -14,8 +14,9 @@ package edu.kit.kastel.command;
  * @see CommandHandler
  *
  * @author Programmieren-Team
+ * @author uwwfh
  */
-public final class CommandResult {
+final class CommandResult {
     
     private final String message;
     private final CommandResultType type;
@@ -26,7 +27,7 @@ public final class CommandResult {
      * @param type the type of the result
      * @param resultMessage the message of the result. May be {@code null} to indicate that there is no message.
      */
-    public CommandResult(CommandResultType type, String resultMessage) {
+    CommandResult(CommandResultType type, String resultMessage) {
         this.message = resultMessage;
         this.type = type;
     }
@@ -35,7 +36,7 @@ public final class CommandResult {
      * Returns the message of the result. Might be {@code null} indicating that there was no result message.
      * @return the message of the result.
      */
-    public String getMessage() {
+    String getMessage() {
         return message;
     }
     
@@ -43,7 +44,7 @@ public final class CommandResult {
      * Returns the type of the result.
      * @return the type of the result.
      */
-    public CommandResultType getType() {
+    CommandResultType getType() {
         return type;
     }
 }

@@ -16,7 +16,7 @@ public final class CommandHandler {
     /**
      * The prefix for any error messages.
      */
-    public static final String ERROR_PREFIX = "Error, ";
+    private static final String ERROR_PREFIX = "Error, ";
     private static final String COMMAND_HANDLER_NOT_INITIALIZED =
             "%sthe CommandHandler has not yet been initialized. Call CommandHandler.initialize() first.".formatted(ERROR_PREFIX);
     private static final String COMMAND_SEPARATOR_REGEX = " +";
