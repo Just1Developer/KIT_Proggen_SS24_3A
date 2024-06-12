@@ -22,7 +22,7 @@ public class Ant {
      * @param direction The direction the ant is looking initially.
      */
     Ant(final World world, Coordinate location, Direction direction) {
-        this.direction = Direction.UP;
+        this.direction = direction;
         this.location = location.copy();
         this.world = world;
     }
